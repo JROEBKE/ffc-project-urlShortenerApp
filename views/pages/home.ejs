@@ -1,0 +1,53 @@
+<div class="container">
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+
+      <% if (errors.length > 0) { %>
+          <div class="alert alert-danger">
+              <% for (error of errors) { %>
+                  <%= error %><br>
+              <% } %>
+          </div>
+      <% } %>
+
+    <form action="/create" method="POST" id="create">
+      <div class="form-group">
+        <label>Create a short Url</label>
+        <input type="text" name="url" id="url" value="https://www.freecodecamp.org">
+		    <span id="urlError" style="display: none;">You must enter a valid url like https://www.google.com </span>
+      </div>
+
+
+      <div class="form-group">
+       <button type="submit" class="btn btn-success btn-lg">Create</button>
+      </div>
+
+   </form>
+
+   <div class="form-group">
+     <label>To access short URL you have to add id behind ../{_id)</label>
+
+   </div>
+
+
+ </div>
+
+<script type="text/javascript">
+//query parameters as default set if backend error occurs
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+var url = document.getElementById('url');
+url.value = getUrlParameter('url');
+
+</script>
+
+
+</div>
