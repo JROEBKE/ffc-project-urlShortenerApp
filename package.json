@@ -19,7 +19,7 @@
     "express-ejs-layouts": "^2.2.0",
     "express-session": "^1.14.0",
     "express-validator": "^2.21.0",
-    "helmet": "^3.9.0",
+    "helmet": "^3.21.1",
     "minimist": "*",
     "moment": "^2.18.1",
     "mongodb": "^3.0.4",
