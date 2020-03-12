@@ -20,7 +20,7 @@
     "express-session": "^1.14.0",
     "express-validator": "^2.21.0",
     "helmet": "^3.9.0",
-    "minimist": "*",
+    "minimist": "1.2.2",
     "moment": "^2.18.1",
     "mongodb": "^3.0.4",
     "mongoose": "^4.11.11",
