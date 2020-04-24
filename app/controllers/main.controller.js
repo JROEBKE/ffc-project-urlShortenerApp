@@ -40,10 +40,10 @@ module.exports = {
     }
 
    // save url to db
-  url.save(function(err) {
-    if (err){
-      console.log("error save");
-      console.log(err);
+    url.save(function(err) {
+      if (err){
+        console.log("error save");
+        console.log(err);
     }
 
     res.json(url);
@@ -57,8 +57,9 @@ module.exports = {
 */
  function getUrl(req, res) {
 
-   Url.findOne({ _id: req.params.id }, (err, url) => {
-   res.redirect(url.url);
+   Url.findById(req.params.id, (err, url) => {
+    console.log(url);
+    res.status(403).redirect(url.url);
    });
  }
 
