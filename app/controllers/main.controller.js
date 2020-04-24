@@ -57,10 +57,21 @@ module.exports = {
 */
  function getUrl(req, res) {
 
-   Url.findById(req.params.id, (err, url) => {
-    console.log(url);
-    res.status(403).redirect(url.url);
-   });
+  var id = req.params.id;
+  console.log('search for '+id);
+
+  Url.findById(id, function (err, url) {
+    if (err) {
+      console.log('could not find '+id);               
+      return res.status(404).send({message: 'short url does no exist'});
+    } else if(!url) {
+      console.log('could not find '+bookid);
+      return res.status(404).send({message: 'short url does no exist'});
+    } else {
+      console.log("returned "+id);      
+      res.status(403).redirect(url.url);
+    }     
+  });
  }
 
  

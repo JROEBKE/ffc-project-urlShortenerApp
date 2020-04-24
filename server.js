@@ -35,7 +35,13 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
 // connect to database
-mongoose.connect(process.env.DB_URI);
+mongoose
+.connect(process.env.DB_URI, {
+useUnifiedTopology: true,
+useNewUrlParser: true,
+})
+.then(() => console.log('DB Connected!'))
+mongoose.set('useFindAndModify', false);
 
 // use body parser to grab info from a form
 app.use(bodyParser.urlencoded({ extended: false })); 
