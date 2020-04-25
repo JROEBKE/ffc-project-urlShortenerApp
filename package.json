@@ -15,7 +15,7 @@
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.2.0",
     "express-session": "^1.14.0",
-    "express-validator": "^3.0.0",
+    "express-validator": "^5.0.0",
     "helmet": "^3.22.0",
     "minimist": "*",
     "moment": "^2.18.1",
